@@ -10,7 +10,7 @@ name 'app_inf'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'app_inf::default'
+run_list 'app_inf::webserver'
 
 # Specify a custom source for a single cookbook:
 cookbook 'app_inf', path: '.'

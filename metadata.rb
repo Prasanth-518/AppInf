@@ -3,7 +3,7 @@ maintainer 'Prasanth'
 maintainer_email 'prasanthvg3@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures app_inf'
-version '0.4.0'
+version '0.5.0'
 chef_version '>= 14.0'
 supports 'ubuntu','=16.04'
 # The `issues_url` points to the location where issues for this cookbook are

@@ -7,7 +7,6 @@ bash 'apt-update' do
 end
 
 package 'g++'
-package 'libmysqlcppconn-dev'
 
 # installing apache server
 package 'apache2' do
@@ -19,7 +18,7 @@ bash 'enable cgi' do
   user 'vagrant'
   code <<-EOH
     sudo a2enmod cgi
-EOH
+  EOH
 end
 
 # configuring .conf file
@@ -42,6 +41,17 @@ service 'apache2' do
   action :restart
 end
 
-template '/var/www/cgi-bin/dbconnect.cpp' do
-  source 'dbconnect.cpp.erb'
+template '/var/www/cgi-bin/CGITest.cpp' do
+  source 'CGITest.cpp.erb'
+end
+
+template '/var/www/html/ApacheTest.html' do
+  source 'ApacheTest.html.erb'
+end
+
+bash 'test-cgi' do
+  code <<-EOH
+    cd /var/www/cgi-bin/
+    sudo g++ -o CGITest CGITest.cpp
+  EOH
 end
