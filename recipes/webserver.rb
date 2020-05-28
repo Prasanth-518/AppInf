@@ -1,6 +1,7 @@
 # installing g++ and mysql connector
+
 bash 'apt-update' do
-  code << -EOH
+  code <<-EOH
   sudo apt update
   EOH
 end
