@@ -1,4 +1,4 @@
 # app_inf
 
-TODO: Enter the cookbook description here.
+TODO: Installs apache and configures server to enable cgi.
 
